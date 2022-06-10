@@ -118,4 +118,4 @@ const displayShareScreen = (title, description, whatsappSettings, telegramSettin
     display();
 }
 
-export {displayShareScreen, isMobile, setAlternativeButtonSettings};
+export {displayShareScreen};
