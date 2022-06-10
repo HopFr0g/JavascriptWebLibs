@@ -1,24 +1,3 @@
-/* Window for notifications and error warnings:
- 
-To use notification pop-ups, simply add this snippet to your HTML document:
-
-<div class="notification" style="display: none">
-    <div class="notification__window">
-        <h3 class="notification__window-title"></h3>
-        <p class="notification__window-description"></p>
-        <button class="notification__window-button fancy__button-red"></button>
-        <p class="notification__window-alternativebutton" style="display: none"></p>
-    </div>
-</div>
-
-Attach notification.css and fancy.css file to your document.
-Make sure to put:
-    - import {displayNotification} from "path of this file";
-on the js file that will call displayNotification function, and put:
-    - type="module"
-attribute on the <script> tag of THE SAME JS FILE THAT WILL CALL DISPLAYNOTIFICATION FUNCTION.
-*/
-
 const display = () => {
     const notification = document.querySelector(".notification");
     notification.removeAttribute("style");
