@@ -1,0 +1,109 @@
+.share {
+    position: fixed;
+    top: 0;
+    z-index: 15000000000;
+    
+    background: #00000080;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    top: 0;
+    left: 0;
+}
+
+.share__window {
+    width: 100%;
+    height: 260px;
+    
+    padding: 10px;
+    
+    position: absolute;
+    z-index: 20000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    margin: auto;
+    padding: 8px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px #505050;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    text-align: center;
+}
+
+.share__window-title, .share__window-description {
+    margin: 8px;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    
+    margin: 12px;
+    
+    outline: none;
+    border: 4px solid #EFEFEF;
+    border-radius: 100%;
+    
+    font-size: 20pt;
+    color: #FFFFFF;
+    
+    transition: background-color .6s, border-color .6s;
+}
+
+.button:focus, .button:hover {
+    outline: none;
+    border: 4px solid #E0E0E0;
+}
+
+.whatsapp-button {
+    background: #33C466;
+}
+
+.telegram-button {
+    background: #32AFED;
+}
+
+.clipboard-button {
+    background: #8686F1;
+}
+
+.whatsapp-button:hover, .whatsapp-button:focus {
+    background: #1DB853;
+}
+
+.telegram-button:hover, .telegram-button:focus {
+    background: #2B9DD6;
+}
+
+.clipboard-button:hover, .clipboard-button:focus {
+    background: #7A7AE6;
+}
+
+.share__window-alternative {
+    margin: 8px;
+}
+
+.alternative-button {
+    display: inline;
+    
+    cursor: pointer;
+    text-decoration: underline;
+    
+    font-weight: 600;
+}
+
+/* Desktop design: */
+
+@media screen and (min-width: 600px) {
+    .share__window {
+        width: 420px;
+        border-radius: 8px;
+    }
+}
