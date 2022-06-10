@@ -1,14 +1,3 @@
-/*
-To use it, just add:
-
-<div class="loading-screen">
-    <img src="loading.gif">
-</div>
-
-at the end of the container that need a loading screen in your html file 
-and attach loading-screen.css
-*/
-
 .loading-screen {
 	background: #70707070;
 
