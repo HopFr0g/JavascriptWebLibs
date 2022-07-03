@@ -1,6 +1,6 @@
 const getUrlParameters = () => {
     // Structure of 'parameters' object:
-    // {"parameter1": "value", "parameter2": "value", "parameter3", "value"}
+    // {"parameter1": "value1", "parameter2": "value2", ..., "parameterN", "valueN"}
     let parameters = {};
     
     // Access to "search" attribute on the current url to get the content after '?':
