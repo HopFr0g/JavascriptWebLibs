@@ -135,13 +135,12 @@ const removeObject = (dir, idKey, idValue, multipleMatches) => {
 
 const addObject = (dir, jsonObject) => {
     // Receives a directory "dir" of a .json file containing an array of json objects.
-    // Returns a promise that resolves on true if the add process is successful.
     return new Promise(async (resolve, reject) => {
         try {
             let jsonArray = await readFile(dir);
             jsonArray.push(jsonObject);
             await writeFile(dir, JSON.stringify(jsonArray));
-            return resolve(true);
+            return resolve();
         }
         catch (error) {
             return reject(error);
@@ -152,7 +151,6 @@ const addObject = (dir, jsonObject) => {
 const sort = (dir, idKey) => {
     // Receives a directory "dir" of a .json file containing an array of json objects.
     // Sorts objects incrementally based on the value of the idKey field.
-    // Returns a promise that resolves on true if the sort process is successful.
     return new Promise(async (resolve, reject) => {
         try {
             let jsonArray = await readFile(dir);
@@ -164,7 +162,7 @@ const sort = (dir, idKey) => {
                 return 0;
             });
             await writeFile(dir, JSON.stringify(jsonArray));
-            return resolve(true);
+            return resolve();
         }
         catch (error) {
             return reject(error);
