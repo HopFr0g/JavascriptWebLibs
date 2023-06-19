@@ -1,29 +1,28 @@
-const sendPost = (url, body, resType) => {
-    return new Promise(async (resolve, reject) => {
-        try {const settings = {
-                method: "POST",
-                headers: {"Content-Type":"application/json"},
-                body: JSON.stringify(body)
-            };
-            let req = await fetch(url, settings);
-            let res = await req[resType]();
-            return resolve(res);
-        } catch (e) {
-            return reject(e);
-        }
-    });
-}
-
-const sendGet = (url, resType) => {
+const sendHttpRequest = (method, url, body, resType) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let req = await fetch(url);
+            const settings = {
+                method
+            };
+            
+            if (body != undefined && body != null) {
+                settings["body"] = JSON.stringify(body);
+                settings["headers"] = {
+                    "content-type": "application/json"
+                };
+            }
+            
+            let req = await fetch(url, settings);
             let res = await req[resType]();
+            
             return resolve(res);
         } catch (e) {
+            console.error(e);
             return reject(e);
         }
     });
 }
 
-export {sendPost, sendGet};
+export {
+    sendHttpRequest
+};
